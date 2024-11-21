@@ -1,0 +1,16 @@
+mixin article(filter, chapter_h, chapter_h_ext, chapter__text_1, chapter__text_2)
+  article(class="content" class=filter)  
+    h2.chapter__h= chapter_h   
+      if chapter_h_ext.length > 0
+        span= chapter_h_ext
+    div.img__container
+      img.filtered_img(src = './images/image__car.png')
+    div.chapter__content
+      p.chapter__text= chapter__text_1 
+      p.chapter__text= chapter__text_2 
+    div.button__container
+      button.buttons.card__icon-button
+        svg.like-icon(viewBox="0 0 27 24")
+          use(href='./svg/heart in paths.svg')
+      button.card__like-button 
+        p.text__like Like
