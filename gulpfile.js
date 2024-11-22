@@ -96,13 +96,13 @@ function watchFiles() {
 const build = gulp.series(clean, gulp.parallel(pug, css, images, scripts, fonts));
 const watchapp = gulp.parallel(build, watchFiles, serve);
 
-exports.html = html;
 exports.pug = pug;
 exports.css = css;
 exports.images = images;
 exports.clean = clean;
 exports.scripts = scripts;
 exports.fonts = fonts;
+exports.html = html;
 
 
 exports.build = build;

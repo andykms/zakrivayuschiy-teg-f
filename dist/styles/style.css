@@ -680,7 +680,8 @@ dialog::backdrop {
   font-size: 14px;
   line-height: 21px;
   font-family: var(--font-pixel);
-  color: var(--text-color);
+  color: var(--button-text-color);
+  mix-blend-mode: difference;
 }
 
 .dialog__info {
