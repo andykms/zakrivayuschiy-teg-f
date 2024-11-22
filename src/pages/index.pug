@@ -65,11 +65,14 @@ html(lang="ru")
     link(rel="stylesheet" href="./styles/animations.css")
     meta(name="color-scheme" content="dark light")
     link(rel="stylesheet" href="styles/themes.css")
+    link(rel="icon" href = "./svg/favicon.svg+xml" media = "(prefers-color-scheme: dark)")
     script(src="./scripts/set-theme.js")
   body.page
     include ./header
     main.content__section
-        include ./article.pug 
-        each article in articles 
-          +article(article['filter'], article['chapter_h'], article['chapter_h_ext'], article['chapter__text_1'], article['chapter__text_2'])
+      include ./article.pug 
+      each article in articles 
+        +article(article['filter'], article['chapter_h'], article['chapter_h_ext'], article['chapter__text_1'], article['chapter__text_2'])
+    include ./footer
+    include ./dialog
     script(src="./scripts/like.js")

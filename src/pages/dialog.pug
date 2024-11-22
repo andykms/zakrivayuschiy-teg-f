@@ -1,0 +1,10 @@
+dialog.dialog(id = "dialog-id")
+  article.save__dialog
+    div.dialog__info
+      svg.icon__floppy.dialog__icon(viewBox= "0 0 29 28")
+        use(xlink:href="./svg/floppy.svg#floppy")/
+      h3.dialog__text Вставьте дискету, чтобы продолжить
+    form
+      button.buttons.confirm.button-rect(type="submit" onclick="window['dialog-id'].close()")
+        p.dialog__text ок
+
