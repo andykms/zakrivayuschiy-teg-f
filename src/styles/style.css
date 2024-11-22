@@ -72,7 +72,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: 14px;
+  gap: 12px;
 }
 
 .theme-menu__button {
@@ -88,15 +88,6 @@
 .theme-menu__button:disabled {
   color: var(--choose-text);
   pointer-events: none;
-}
-
-@keyframes cursor {
-  50% {
-    transform: translateX(-4px);
-  }
-  to {
-    transform: translateX(0);
-  }
 }
 
 .theme-menu__button:disabled::before {
@@ -408,30 +399,11 @@
   transition: fill 0.3s 0.06s linear;
 }
 
-@keyframes scale_like {
-  from {
-    transform: scale(1);
-  }
-
-  to {
-    transform: scale(1.5);
-  }
-}
 
 .like-icon.is-liked {
   opacity: 1;
   animation: scale_like 0.3s 0.1s ease-in;
   animation-direction: alternate-reverse;
-}
-
-@keyframes opacity_sparks {
-  from {
-    opacity: 0;
-  }
-  
-  to {
-    opacity: 1;
-  }
 }
 
 .like-icon.is-liked .sparks{

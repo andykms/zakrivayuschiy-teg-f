@@ -103,7 +103,7 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  gap: 14px;
+  gap: 12px;
 }
 
 .theme-menu__button {
@@ -120,28 +120,6 @@
 .theme-menu__button:disabled {
   color: var(--choose-text);
   pointer-events: none;
-}
-
-@-webkit-keyframes cursor {
-  50% {
-    -webkit-transform: translateX(-4px);
-            transform: translateX(-4px);
-  }
-  to {
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
-  }
-}
-
-@keyframes cursor {
-  50% {
-    -webkit-transform: translateX(-4px);
-            transform: translateX(-4px);
-  }
-  to {
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
-  }
 }
 
 .theme-menu__button:disabled::before {
@@ -524,55 +502,12 @@
   transition: fill 0.3s 0.06s linear;
 }
 
-@-webkit-keyframes scale_like {
-  from {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-
-  to {
-    -webkit-transform: scale(1.5);
-            transform: scale(1.5);
-  }
-}
-
-@keyframes scale_like {
-  from {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-
-  to {
-    -webkit-transform: scale(1.5);
-            transform: scale(1.5);
-  }
-}
 
 .like-icon.is-liked {
   opacity: 1;
   -webkit-animation: scale_like 0.3s 0.1s ease-in;
           animation: scale_like 0.3s 0.1s ease-in;
   animation-direction: alternate-reverse;
-}
-
-@-webkit-keyframes opacity_sparks {
-  from {
-    opacity: 0;
-  }
-  
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes opacity_sparks {
-  from {
-    opacity: 0;
-  }
-  
-  to {
-    opacity: 1;
-  }
 }
 
 .like-icon.is-liked .sparks{
