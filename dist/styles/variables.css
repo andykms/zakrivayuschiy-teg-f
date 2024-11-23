@@ -4,11 +4,13 @@
   --button-text-color: #fff;
   --red-icon-color: #FF0000;
   --choose-text: rgb(0 0 0/0.6);
+  --text-bold: 700;
+  --text-normal: 400;
+  --main-chapter-padding: clamp(7.5rem, 7.147887323943662rem + 1.5023474178403755vw, 8.5rem);
   --content-width: clamp(23.4375rem, 16.285211267605632rem + 30.51643192488263vw, 43.75rem);
-  --header-height: clamp(20.438rem, 19.535rem + 3.85vw, 23rem);
   --p-padding: 25px;
-  --font-var: 'Inter-Variable';
-  --font-pixel: 'PressStart2P';
+  --font-var: 'Inter-Variable', sans-serif;
+  --font-pixel: 'PressStart2P', fantasy;
   --text-padding: 3px 0 5px 10px;
   --gap-articles: 50px;
   --padding-text-left:  clamp(1.5625rem, 1.8160211267605635rem + -0.2816901408450704vw, 1.75rem);
@@ -25,7 +27,6 @@
   --padding-left-accent-text: 10px;
   --main-text-size: clamp(3.0625rem, 2.710387323943662rem + 1.5023474178403755vw, 4.0625rem);
   --about-text-size: clamp(0.875rem, 0.6769366197183099rem + 0.8450704225352111vw, 1.4375rem);
-  --grid-rows: 120px min-content 120px;
   --margin-end: 52px;
   --save-width: clamp(19.125rem, 18.486795774647888rem + 2.7230046948356805vw, 20.9375rem);
   --save-height: clamp(3.4375rem, 5.550176056338028rem + -2.3474178403755865vw, 5rem);
@@ -34,13 +35,17 @@
   --save-direction: column;
   --left: clamp(0.8125rem, 0.5484154929577465rem + 1.1267605633802815vw, 1.5625rem);
   --dialog-inline-padding: clamp(1.875rem, 1.6109154929577465rem + 1.1267605633802815vw, 2.625rem);
-  --dialog-height: clamp(21.3125rem, 21.048415492957748rem + 1.1267605633802815vw, 22.0625rem);
+  --dialog-width: clamp(21.3125rem, 21.048415492957748rem + 1.1267605633802815vw, 22.0625rem);
 }
 @media (min-width: 1440px) {
   :root {
     --article-width: 696px;
     --save-memory-direction: row;
-    --grid-rows: 136px min-content 120px;
     --save-direction: row;
+  }
+}
+@media (width < 375px) {
+  :root {
+    --content-width: 100%;
   }
 }

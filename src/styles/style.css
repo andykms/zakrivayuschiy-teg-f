@@ -32,12 +32,11 @@
 }
 
 .header {
-  font-family: var(--font-pixel), sans-serif;
-  display: grid;
+  font-family: var(--font-pixel);
+  display: flex;
+  flex-direction: column;
   min-inline-size: var(--content-width);
-  min-block-size: var(--header-height);
-  justify-items: center;
-  grid-template-rows: var(--grid-rows);
+  align-items: center;
   border: 2px solid var(--text-color);
   text-transform: uppercase;
   background-color: var(--background-color-article);
@@ -45,9 +44,10 @@
 }
 
 .main-chapter {
+  padding-block-start: var(--main-chapter-padding);
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 22px;
   align-items: center;
   grid-row: 2/3;
 }
@@ -64,7 +64,8 @@
 
 .theme-menu {
   grid-row: -2;
-  padding: var(--p-padding) 0;
+  padding-block-start: var(--p-padding);
+  margin-block-end: var(--p-padding);
   font-size: 14px;
 }
 
@@ -72,7 +73,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: 12px;
+  gap: 1em;
 }
 
 .theme-menu__button {
@@ -83,6 +84,7 @@
   padding-inline-start: 23px;
   line-height: 14px;
   cursor: pointer;
+  transition: color 0.3s ease;
 }
 
 .theme-menu__button:disabled {
@@ -94,7 +96,8 @@
   content: '▶';
   position: absolute;
   inset-inline-start: 8.5px;
-  animation: cursor 1s ease-in-out infinite;
+  animation: cursor 0.5s ease-in-out infinite;
+  animation-direction: alternate;
 }
 
 .theme-menu__button:focus {
@@ -103,7 +106,6 @@
 
 .theme-menu__button:focus-visible {
   color: var(--choose-text);
-  transition: color 0.3s ease;
 }
 
 .theme-menu__button::after{
@@ -130,18 +132,20 @@
   margin-block-end: var(--margin-end);
 }
 
-.image__normal .chapter__h{
+.image__normal .chapter__heading{
   padding-inline-end: 24px;
 }
 
 .content__section {
-  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.chapter__h {
+.chapter__heading {
   font-family: var(--font-var);
+  font-variation-settings: "wght" var(--text-bold);
   font-size: 18px;
-  font-weight: 700;
   line-height: 21.78px;
   color: var(--text-color);
   padding: var(--text-padding);
@@ -156,7 +160,7 @@
   z-index: 0;
 }
 
-.img__container::before {
+.back-img__text {
   position: absolute;
   font-size: 14px;
   line-height: 14px;
@@ -169,10 +173,11 @@
   background-blend-mode: hard-light;
   opacity: 50%;
   -webkit-text-stroke: 1px var(--img-str-stroke);
+  z-index: 2;
 }
 
 @supports not (-webkit-text-stroke: 1px var(--img-str-stroke)) {
-  .img__container::before {
+  .back-img__text {
     text-shadow: 1px 0 1px var(--img-str-stroke), 
     0 1px 1px var(--img-str-stroke), 
     -1px 0 1px var(--img-str-stroke), 
@@ -191,72 +196,32 @@
   object-position: center;
 }
 
-.image__normal .img__container::before {
-  content: "</HTML>";
-  z-index: 2;
-}
-
 .image__sepia .filtered_img {
   filter: sepia(50%);
-}
-
-.image__sepia .img__container::before {
-  content: "</HTML>";
-  z-index: 2;
 }
 
 .image__saturate .filtered_img {
   filter: saturate(300%);
 }
 
-.image__saturate .img__container::before {
-  content: "<css>";
-  z-index: 2;
-}
-
 .image__hue-rotate .filtered_img {
   filter: hue-rotate(30deg);
-}
-
-.image__hue-rotate .img__container::before {
-  content: "<desigions>";
-  z-index: 2;
 }
 
 .image__invert .filtered_img {
   filter: invert(75%);
 }
 
-.image__invert .img__container::before {
-  content: "care";
-  z-index: 2;
-}
-
 .image__grayscale .filtered_img {
   filter: grayscale(100%);
-}
-
-.image__grayscale .img__container::before {
-  content: "<support>";
-  z-index: 2;
 }
 
 .image__blur .filtered_img {
   filter: blur(0.3rem);
 }
 
-.image__blur .img__container::before {
-  content: "<lifes-style: none;>";
-  z-index: 2;
-}
-
 .image__contrast .filtered_img {
   filter: hue-rotate(80deg) blur(0.1rem);
-}
-
-.image__contrast .img__container::before {
-  content: "<experience>";
-  z-index: 2;
 }
 
 .chapter__content {
@@ -273,15 +238,17 @@
   font-family: var(--font-var);
   font-size: 18px;
   line-height: 1.3rem;
-  font-weight: 400;
+  font-variation-settings: "wght" var(--text-normal);
 }
 
 .button__container {
   display: flex;
   justify-content: flex-end;
-  padding-block-end: 25px;
+  margin-block-end: 25px;
   padding-inline-end: 25px;
-  align-items: center;
+  flex-shrink: 0;
+  block-size: 38px;
+  gap: 8px;
 }
 
 .buttons {
@@ -290,17 +257,23 @@
   background-color: var(--background-color-article);
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
 }
 
 .card__icon-button {
   border: 2px solid transparent;
   background-color: inherit;
-  max-block-size: 38px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  block-size: 100%;
+  padding: 0;
+  transition: border 0.3s ease;
 }
 
 .card__like-button {
   inline-size: 130px;
-  block-size: 38px;
+  block-size: 100%;
   position: relative;
   z-index: 1;
 }
@@ -311,13 +284,15 @@
 
 .card__icon-button:focus-visible {
   border: 2px solid var(--text-color);
-  transition: border 0.3s ease;
+}
+
+.button-rect {
+  transition: box-shadow 0.3s ease;
 }
 
 .button-rect:focus {
   outline: none;
   box-shadow: 2px 2px 0 0 var(--text-color);
-  transition: box-shadow 0.3s ease;
 }
 
 .button__text {
@@ -348,7 +323,7 @@
 .like-icon .core {
   opacity: 1;
   fill: var(--background-color-article);
-  transition: fill 0.3s 0.05s linear;
+  transition: fill 0.3s linear;
 }
 
 .like-icon .main-body {
@@ -359,13 +334,13 @@
 
 .like-icon:hover .core {
   opacity: 1;
-  fill: #000;
+  fill: var(--text-color);
   transition: fill 0.3s linear;
 }
 
 .like-icon:hover .main-body {
   opacity: 1;
-  fill: #000;
+  fill: var(--text-color);
   transition: fill 0.3s 0.05s linear;
 }
 
@@ -463,8 +438,7 @@ dialog::backdrop {
 .dialog {
   box-sizing: border-box;
   padding: 30px var(--dialog-inline-padding) 30px var(--dialog-inline-padding);
-  inline-size: var(--dialog-height);
-  min-block-size: 191px;
+  inline-size: var(--dialog-width);
   border: 2px solid var(--text-color);
   background-color: var(--background-color-article);
 }
@@ -489,7 +463,6 @@ dialog::backdrop {
 
 .dialog__info {
   align-self: center;
-  min-block-size: 63px;
   display: grid;
   grid-template-columns: max-content auto;
   align-items: center;

@@ -16,6 +16,7 @@
       href="./svg/favicon.svg"
       media="(prefers-color-scheme: dark)"
     />
+    <link rel="apple-touch-icon" sizes="180x180" href="./images/favicon.png" />
     <script src="./scripts/set-theme.js"></script>
   </head>
   <body class="page">
@@ -52,11 +53,12 @@
     </header>
     <main class="content__section">
       <article class="content image__normal">
-        <h2 class="chapter__h">
-          Фритрек и нулевой спринт:<span> Подготовка к работе</span>
+        <h2 class="chapter__heading">
+          Фритрек и нулевой спринт: Подготовка к работе
         </h2>
         <div class="img__container">
-          <img
+          <span class="back-img__text">&lt;/HTML&gt;</span
+          ><img
             class="filtered_img"
             src="./images/image__car.png"
             alt="Начало обучения"
@@ -121,9 +123,10 @@
         </div>
       </article>
       <article class="content image__sepia">
-        <h2 class="chapter__h">1 спринт: Я — чистый лист</h2>
+        <h2 class="chapter__heading">1 спринт: Я — чистый лист</h2>
         <div class="img__container">
-          <img
+          <span class="back-img__text">&lt;/HTML&gt;</span
+          ><img
             class="filtered_img"
             src="./images/image__car.png"
             alt="Начало первого спринта"
@@ -186,9 +189,10 @@
         </div>
       </article>
       <article class="content image__saturate">
-        <h2 class="chapter__h">1 спринт: А если не получится?</h2>
+        <h2 class="chapter__heading">1 спринт: А если не получится?</h2>
         <div class="img__container">
-          <img
+          <span class="back-img__text">&lt;css&gt;</span
+          ><img
             class="filtered_img"
             src="./images/image__car.png"
             alt="Первый проект"
@@ -251,9 +255,10 @@
         </div>
       </article>
       <article class="content image__hue-rotate">
-        <h2 class="chapter__h">2 спринт: Погоня за идеалом</h2>
+        <h2 class="chapter__heading">2 спринт: Погоня за идеалом</h2>
         <div class="img__container">
-          <img
+          <span class="back-img__text">&lt;desigions&gt;</span
+          ><img
             class="filtered_img"
             src="./images/image__car.png"
             alt="Начало второго спринта"
@@ -315,9 +320,10 @@
         </div>
       </article>
       <article class="content image__invert">
-        <h2 class="chapter__h">2 спринт: О тех, кто рядом</h2>
+        <h2 class="chapter__heading">2 спринт: О тех, кто рядом</h2>
         <div class="img__container">
-          <img
+          <span class="back-img__text">care</span
+          ><img
             class="filtered_img"
             src="./images/image__car.png"
             alt="Окончание второго спринта"
@@ -380,9 +386,10 @@
         </div>
       </article>
       <article class="content image__grayscale">
-        <h2 class="chapter__h">3 спринт: Обходные стратегии</h2>
+        <h2 class="chapter__heading">3 спринт: Обходные стратегии</h2>
         <div class="img__container">
-          <img
+          <span class="back-img__text">&lt;support&gt;</span
+          ><img
             class="filtered_img"
             src="./images/image__car.png"
             alt="Начало третьего спринта"
@@ -443,9 +450,10 @@
         </div>
       </article>
       <article class="content image__blur">
-        <h2 class="chapter__h">3 спринт: Когда опускаются руки</h2>
+        <h2 class="chapter__heading">3 спринт: Когда опускаются руки</h2>
         <div class="img__container">
-          <img
+          <span class="back-img__text">&lt;lifes-style: none;&gt;</span
+          ><img
             class="filtered_img"
             src="./images/image__car.png"
             alt="Окончание третьего спринта"
@@ -509,9 +517,10 @@
         </div>
       </article>
       <article class="content image__contrast">
-        <h2 class="chapter__h">«Сейчас я здесь»</h2>
+        <h2 class="chapter__heading">«Сейчас я здесь»</h2>
         <div class="img__container">
-          <img
+          <span class="back-img__text">&lt;experience&gt;</span
+          ><img
             class="filtered_img"
             src="./images/image__car.png"
             alt="Сейчас я здесь"
@@ -582,8 +591,6 @@
           </button>
         </div>
       </article>
-    </main>
-    <footer>
       <button
         class="save__button button-rect buttons"
         type="button"
@@ -594,26 +601,26 @@
           <use href="./svg/floppy.svg#floppy" /></svg
         ><span class="button__text">Сохранить на память</span>
       </button>
-    </footer>
-    <dialog class="dialog" id="dialog-id">
-      <article class="save__dialog">
-        <div class="dialog__info">
-          <svg class="icon__floppy dialog__icon" viewBox="0 0 29 28">
-            <use xlink:href="./svg/floppy.svg#floppy" />
-          </svg>
-          <h3 class="dialog__text">Вставьте дискету, чтобы продолжить</h3>
-        </div>
-        <form>
-          <button
-            class="buttons confirm button-rect"
-            type="submit"
-            onclick="window['dialog-id'].close()"
-          >
-            <span class="dialog__text">ок</span>
-          </button>
-        </form>
-      </article>
-    </dialog>
+      <dialog class="dialog" id="dialog-id">
+        <article class="save__dialog">
+          <div class="dialog__info">
+            <svg class="icon__floppy dialog__icon" viewBox="0 0 29 28">
+              <use xlink:href="./svg/floppy.svg#floppy" />
+            </svg>
+            <h3 class="dialog__text">Вставьте дискету, чтобы продолжить</h3>
+          </div>
+          <form method="dialog">
+            <button
+              class="buttons confirm button-rect"
+              type="submit"
+              onclick="window['dialog-id'].close()"
+            >
+              <span class="dialog__text">ок</span>
+            </button>
+          </form>
+        </article>
+      </dialog>
+    </main>
     <script src="./scripts/like.js"></script>
   </body>
 </html>

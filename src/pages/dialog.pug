@@ -4,7 +4,7 @@ dialog.dialog(id = "dialog-id")
       svg.icon__floppy.dialog__icon(viewBox= "0 0 29 28")
         use(xlink:href="./svg/floppy.svg#floppy")/
       h3.dialog__text Вставьте дискету, чтобы продолжить
-    form
+    form(method = "dialog")
       button.buttons.confirm.button-rect(type="submit" onclick="window['dialog-id'].close()")
         span.dialog__text ок
 

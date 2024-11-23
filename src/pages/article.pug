@@ -1,9 +1,8 @@
-mixin article(filter, chapter_h, chapter_h_ext, chapter__text_1, chapter__text_2, alt)
+mixin article(filter, chapter_h, back__text, chapter__text_1, chapter__text_2, alt)
   article(class="content" class=filter)  
-    h2.chapter__h= chapter_h   
-      if chapter_h_ext.length > 0
-        span= chapter_h_ext
+    h2.chapter__heading= chapter_h   
     div.img__container
+      span.back-img__text= back__text
       img.filtered_img(src = './images/image__car.png', alt= alt)
     div.chapter__content
       p.chapter__text= chapter__text_1 
