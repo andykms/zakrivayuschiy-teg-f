@@ -56,23 +56,19 @@
 }
 
 @-webkit-keyframes cursor {
-  50% {
-    -webkit-transform: translateX(-4px);
-            transform: translateX(-4px);
+  from {
+    inset-inline-start: 4px;
   }
   to {
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
+    inset-inline-start: 0;
   }
 }
 
 @keyframes cursor {
-  50% {
-    -webkit-transform: translateX(-4px);
-            transform: translateX(-4px);
+  from {
+    inset-inline-start: 4px;
   }
   to {
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
+    inset-inline-start: 0;
   }
 }

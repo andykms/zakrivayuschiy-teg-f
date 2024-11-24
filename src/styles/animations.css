@@ -33,10 +33,10 @@
 }
 
 @keyframes cursor {
-  50% {
-    transform: translateX(-4px);
+  from {
+    inset-inline-start: 4px;
   }
   to {
-    transform: translateX(0);
+    inset-inline-start: 0;
   }
 }

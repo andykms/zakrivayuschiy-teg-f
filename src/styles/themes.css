@@ -18,6 +18,8 @@
   --fill-contour: #000;
   --img-str-stroke: #fff;
   --img-str-color: #000;
+  --text-bold: 700;
+  --text-normal: 400;
 }
 
 .theme-dark {
@@ -33,6 +35,8 @@
   --fill-contour: #00CC14;
   --img-str-stroke: #000;
   --img-str-color: #00CC14;
+  --text-bold: 785;
+  --text-normal: 465;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -49,5 +53,7 @@
     --fill-contour: #00CC14;
     --img-str-stroke: #000;
     --img-str-color: #00CC14;
+    --text-bold: 785;
+    --text-normal: 465;
   }
 }

@@ -139,11 +139,9 @@
 .theme-menu__button:disabled::before {
   content: '▶';
   position: absolute;
-  inset-inline-start: 8.5px;
   -webkit-animation: cursor 0.5s ease-in-out infinite;
           animation: cursor 0.5s ease-in-out infinite;
-  -webkit-animation-direction: alternate;
-          animation-direction: alternate;
+  animation-direction: alternate-reverse;
 }
 
 .theme-menu__button:focus {
@@ -201,7 +199,7 @@
 
 .chapter__heading {
   font-family: var(--font-var);
-  font-variation-settings: "wght" var(--text-bold);
+  font-variation-settings: 'wght' var(--text-bold);
   font-size: 18px;
   line-height: 21.78px;
   color: var(--text-color);
@@ -312,7 +310,7 @@
   font-family: var(--font-var);
   font-size: 18px;
   line-height: 1.3rem;
-  font-variation-settings: "wght" var(--text-normal);
+  font-variation-settings: 'wght' var(--text-normal);
 }
 
 .button__container {
@@ -432,9 +430,9 @@
 .like-icon .core {
   opacity: 1;
   fill: var(--background-color-article);
-  -webkit-transition: fill 0.3s linear;
-  -o-transition: fill 0.3s linear;
-  transition: fill 0.3s linear;
+  -webkit-transition: fill 0.3s 0.03s linear;
+  -o-transition: fill 0.3s 0.03s linear;
+  transition: fill 0.3s 0.03s linear;
 }
 
 .like-icon .main-body {
